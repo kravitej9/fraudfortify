@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+           margin:0px;
+           margin-top:60px;
+           padding: 0px;
+        }
+        nav{
+           display: flex;
+            position: fixed;
+           top:0;
+           width: 100%;
+           background-color: rgb(251, 255, 196);
+           overflow: auto;
+           height: auto;
+        }
+           .left-links{
+           flex:1 1 200px;
+        }
+        .links {
+           display: inline-block;
+           text-align: center;
+           padding: 14px;
+           color: rgb(0, 0, 0);
+           text-decoration: none;
+           font-size: 17px;
+           font-weight: bolder;
+        }
+        .links:hover {
+           border-bottom: 2px solid purple;
+        }
+        .selected{
+           border-bottom: 2px solid purple;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="left-links">
+        <a class="links selected" href="#">Home</a>
+        <a class="links" href="#"> Login</a>
+        <a class="links" href="#"> Register</a>
+    </div>
+    <div class="right-links">
+        <a class="links" href="#"> Contact Us</a>
+        <a class="links" href="#">More Info</a>
+    </div>
+</nav>
+<h1>Hover on the above links</h1>
+</body>
+</html>
