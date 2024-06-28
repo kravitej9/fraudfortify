@@ -115,24 +115,24 @@
         </ul>
     </nav>
 </header>
-
+<form action="home.html" method="GET">
 <main>
     <section id="loginForm">
         <div class="container">
             <h2>Login</h2>
-            <form id="loginForm" onsubmit="return validateForm()">
+            <form id="loginForm" onsubmit="return validateForm()" >
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br><br>
+                <input type="text" id="username" name="username" required value="admin"><br><br>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br><br>
+                <input type="password" id="password" name="password" required value="admin123"><br><br>
 
                 <button type="submit">Login</button>
             </form>
         </div>
     </section>
 </main>
-
+</form>
 <footer>
     <nav>
         <ul>
@@ -170,7 +170,7 @@
             }
 
             // Simulate a successful login
-            if (username === 'admin' && password === 'admin123') {
+            if (password === 'admin123') {
                 alert('Login successful!');
                 window.location.href = 'home.html'; // Redirect to home.html
                 return false; // Prevent default form submission

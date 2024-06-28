@@ -1,22 +1,31 @@
-document.getElementById('accountTakeoverForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+ // Function to get URL parameters
+        function getParameterByName(name, url = window.location.href) {
+            console.log(name);
+            name = name.replace(/[\[\]]/g, '\\$&');
+            console.log(url);
+            let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+             console.log(results);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
 
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
+        // Function to display the passed value
+        function displayValue() {
+            const value = getParameterByName('username');
+            console.log(value);
+            if (value) {
+                document.getElementById('displayValue').innerText = value;
+                const element = document.getElementById('in');
+                element.parentNode.removeChild(element);
+                document.getElementById('out').style.display='inline';
+            } else {
+                document.getElementById('displayValue').innerText = "Guest";
+                const element = document.getElementById('out');
+                element.parentNode.removeChild(element);
+                document.getElementById('in').style.display='inline';
+            }
+        }
 
-    fetch('http://localhost:5000/predict', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-//        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(result => {
-        // Redirect to results page with result data
-        sessionStorage.setItem('fraudResult', JSON.stringify(result));
-        console.log(JSON.stringify(result));
-        window.location.href = 'results.html';
-    })
-    .catch(error => console.error('Error:', error));
-});
+        window.onload = displayValue;

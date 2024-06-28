@@ -121,49 +121,21 @@
     <section id="transactionFraudForm">
         <div class="container">
             <h2>Transaction Fraud Simulation</h2>
-            <form id="fraudForm">
-                <label for="transactionId">Transaction ID:</label>
-                <input type="text" id="transactionId" name="transactionId" required><br><br>
-
-                <label for="transactionType">Transaction Type:</label>
-                <select id="transactionType" name="transactionType">
-                    <option value="purchase">Purchase</option>
-                    <option value="refund">Refund</option>
-                    <option value="transfer">Transfer</option>
-                    <!-- Add more types as needed -->
-                </select><br><br>
-
-                <label for="amount">Amount:</label>
-                <input type="number" id="amount" name="amount" required><br><br>
-
-                <label for="currency">Currency:</label>
-                <input type="text" id="currency" name="currency" value="USD" required><br><br>
-
-                <label for="timestamp">Timestamp:</label>
-                <input type="datetime-local" id="timestamp" name="timestamp" required><br><br>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required><br><br>
-
-                <label for="userType">User Type:</label>
-                <select id="userType" name="userType">
-                    <option value="regular">Regular</option>
-                    <option value="premium">Premium</option>
-                </select><br><br>
-
-                <button type="submit">Run Simulation</button>
+            <form id="transaction-fraud-form">
+                <label for="transaction_id">Transaction ID:</label>
+                <input type="text" id="transaction_id" name="transaction_id" required><br>
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id_transaction" name="user_id" required><br>
+                <label for="transaction_amount">Transaction Amount:</label>
+                <input type="text" id="transaction_amount" name="transaction_amount" required><br>
+                <label for="payee_id">Payee ID:</label>
+                <input type="text" id="payee_id" name="payee_id" required><br>
+                <button type="submit">Simulate</button>
             </form>
+            <div id="transaction-fraud-result"></div>
         </div>
     </section>
 
-    <section id="simulationResults">
-        <div class="container">
-            <h2>Simulation Results</h2>
-            <div id="resultsContainer">
-                <!-- Results will be displayed here -->
-            </div>
-        </div>
-    </section>
 </main>
 </div>
 <footer>

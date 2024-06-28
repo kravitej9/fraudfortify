@@ -118,37 +118,30 @@
 
 <main>
     <section id="accountTakeoverForm">
-        <div class="container">
+        <div class="container" id="cont">
             <h2>Account Takeover Simulation</h2>
-            <form id="takeoverForm">
-                <label for="accountId">Account ID:</label>
-                <input type="text" id="accountId" name="accountId" required><br><br>
-
-                <label for="method">Takeover Method:</label>
-                <select id="method" name="method">
-                    <option value="phishing">Phishing</option>
-                    <option value="brute-force">Brute Force</option>
-                    <option value="social-engineering">Social Engineering</option>
-                </select><br><br>
-
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location" required><br><br>
-
-                <label for="timestamp">Timestamp:</label>
-                <input type="datetime-local" id="timestamp" name="timestamp" required><br><br>
-
-                <button type="submit">Run Simulation</button>
+            <form id="account-takeover-form">
+                <label for="user_id">User ID:</label>
+                <input type="text" id="user_id" name="user_id" required><br>
+                <label for="typing_speed">Typing Speed:</label>
+                <input type="text" id="typing_speed" name="typing_speed" required><br>
+                <label for="mouse_movement">Mouse Movements:</label>
+                <input type="text" id="mouse_movement" name="mouse_movement" required><br>
+                <label for="login_attempts">Login Attempts:</label>
+                <input type="text" id="login_attempts" name="login_attempts" required><br>
+                <label for="session_duration">Session Duration:</label>
+                <input type="text" id="session_duration" name="session_duration" required><br>
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required><br>
+                <label for="key_press_duration">Key Press Duration:</label>
+                <input type="text" id="key_press_duration" name="key_press_duration" required><br>
+                <label for="interval_between_keys">Interval Between Keys:</label>
+                <input type="text" id="interval_between_keys" name="interval_between_keys" required><br>
+                <button type="submit">Simulate</button>
             </form>
         </div>
-    </section>
+            <div id="account-takeover-result"></div>
 
-    <section id="simulationResults">
-        <div class="container">
-            <h2>Simulation Results</h2>
-            <div id="resultsContainer">
-                <!-- Results will be displayed here -->
-            </div>
-        </div>
     </section>
 </main>
 
@@ -174,6 +167,6 @@
 </footer>
 
 
-<script src="scripts.js"></script>
+<script src="account-takeover.js"></script>
 </body>
 </html>

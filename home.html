@@ -102,18 +102,25 @@
             <nav>
                 <ul>
                     <li><a href="home.html" class="active">Home</a></li>
-                    <li><a href="simulate.html">Simulation</a></li>
+                    <li class="dropdown">
+                        <a href="simulate.html" >Simulation</a>
+                        <div class="dropdown-content">
+                            <a href="account-takeover.html">Account Takeover</a>
+                            <a href="credential-stuffing.html">Credential Stuffing</a>
+                            <a href="transaction-fraud.html">Transaction Fraud</a>
+                        </div>
+                    </li>
                     <li><a href="reports.html">Reports</a></li>
                     <li><a href="settings.html">Settings</a></li>
-                    <li><a href="logout.html">Logout</a></li>
+                    <li id="in"><a href="login.html" >Login</a></li>
+                    <li id="out"><a href="logout.html">Logout</a></li>
                 </ul>
             </nav>
     </header>
-
     <main>
         <section id="welcome">
             <div class="container">
-                <h2>Welcome to FraudFortify</h2>
+                <h2>Welcome to FraudFortify : <b id="displayValue"></b> </h2>
                 <p>FraudFortify is a robust platform designed to enhance fraud detection and prevention
                     capabilities.</p>
                 <p>Utilize our tools to simulate various fraud scenarios, generate insightful reports, and configure
@@ -141,7 +148,7 @@
             </div>
         </section>
     </main>
-</div>
+
 <footer>
     <nav>
         <ul>
@@ -162,5 +169,7 @@
         </ul>
     </nav>
 </footer>
+</div>
+<script type="text/javascript" src="scripts.js"></script>
 </body>
 </html>
